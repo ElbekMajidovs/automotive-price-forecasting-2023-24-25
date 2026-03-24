@@ -65,7 +65,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "Model Comparison",
     "EV Analysis",
     "Feature Importance",
-    "Defense Guide",
+#    "Defense Guide",
 ])
 
 # ══════════════════════════════════════════════════════════════════════════
