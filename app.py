@@ -1,6 +1,6 @@
 """
-Streamlit Dashboard — European Automotive Price Prediction
-Master's Thesis: Hedonic Pricing vs Machine Learning (2023–2025)
+European Automotive Price Prediction
+Comparison between Hedonic Pricing vs Machine Learning (2023–2025)
 Author: Elbek Majidov | University of Warsaw
 """
 import streamlit as st
@@ -52,15 +52,19 @@ test_results = results[results["evaluation"] == "test"] if "evaluation" in resul
 # HEADER
 # ══════════════════════════════════════════════════════════════════════════
 st.title("European Automotive Price Prediction (2023–2025)")
-st.markdown("### Hedonic Pricing Models vs Machine Learning — Master's Thesis")
-st.markdown("**Author:** Elbek Majidov | **Supervisor:** Umair Ashraf Rana | **University of Warsaw**")
+st.markdown("### Hedonic Pricing Models vs Machine Learning")
+st.markdown("**Supervisor:** Umair Ashraf Rana")
+st.markdown("**Student:** Elbek Majidov")
+st.markdown("**University of Warsaw**")
+
+
 
 st.divider()
 
 # ══════════════════════════════════════════════════════════════════════════
 # TAB LAYOUT
 # ══════════════════════════════════════════════════════════════════════════
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
+tab1, tab2, tab3, tab4 = st.tabs([
     "Overview & Data",
     "Model Comparison",
     "EV Analysis",
@@ -99,18 +103,17 @@ with tab1:
     st.bar_chart(top_c)
 
     st.info(
-        "**Why 2023–2025 only?** Years 2021 and 2022 were excluded because they had "
+        "I had to exclude years 2021 and 2022 because they had "
         "fundamentally incompatible schemas: 2021 was Polish mass-market data (PLN currency, "
-        "median price EUR 5K), and 2022 had 100% missing power and engine displacement. "
-        "Including them would test 'can you predict Porsche prices from Opel data' — "
-        "not temporal generalization."
+        "median price was around EUR 5K), and 2022 had 100% missing power and engine displacement. "
+        "Including them would test something like 'Can you predict Porsche prices from Opel data'"
     )
 
 # ══════════════════════════════════════════════════════════════════════════
 # TAB 2: MODEL COMPARISON
 # ══════════════════════════════════════════════════════════════════════════
 with tab2:
-    st.header("Model Comparison — Held-Out Test Set")
+    st.header("Model Comparison with Held-Out Test Set")
 
     st.markdown(
         "The test set is a **stratified random 15% hold-out** (34,328 vehicles), "
@@ -158,7 +161,7 @@ with tab2:
     r2_improv = ml_best["R²"] - hed_best["R²"]
 
     st.success(
-        f"**Key Finding (RQ1):** {ml_best['Model']} (ML) reduces RMSE by "
+        f"**Key Finding is (RQ1):** {ml_best['Model']} (ML) reduces RMSE by "
         f"**{rmse_improv:.0f}%** compared to the best hedonic model, "
         f"improving R² by **+{r2_improv:.3f}** (from {hed_best['R²']:.3f} to {ml_best['R²']:.3f})."
     )
@@ -181,7 +184,7 @@ with tab2:
     )
 
     # LOYO
-    st.subheader("Temporal Robustness — Leave-One-Year-Out")
+    st.subheader("Temporal Robustness Leave-One-Year-Out (LOYO)")
     loyo_data = {
         "Held-Out Year": [2023, 2024, 2025],
         "RMSE (log)": [1.380, 0.793, 0.305],
@@ -196,10 +199,10 @@ with tab2:
     st.dataframe(pd.DataFrame(loyo_data), use_container_width=True, hide_index=True)
 
     st.warning(
-        "**Honest assessment:** Cross-year generalization is asymmetric. Each AutoScout24 "
+        "Cross year generalization is asymmetric. Each AutoScout24 "
         "scrape captured different vehicle segments, so predicting across years tests "
         "population transfer, not just temporal forecasting. The primary stratified split "
-        "is the reliable evaluation; LOYO is a supplementary robustness check."
+        "is the reliable evaluation; I performed LOYO just for a supplementary robustness check."
     )
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -259,9 +262,9 @@ with tab3:
             st.dataframe(corr_df.round(3), use_container_width=True, hide_index=True)
 
         st.warning(
-            "**Caveat:** With only 5 annual observations (2021–2025), these correlations "
-            "have very low statistical power. They should be interpreted as exploratory "
-            "evidence of directional alignment, not confirmatory proof of causal relationships."
+            "With only 5 annual observations (from 2021 till 2026), these correlations "
+            "aren’t very much robust. They can suggest possible patterns or trends," 
+            "but they don’t stricly prove that one thing actually causes another."
         )
     except Exception:
         st.info("Run notebook 05 to generate material analysis results.")
@@ -298,7 +301,7 @@ with tab4:
             pass
 
         st.success(
-            "**Key insight:** Vehicle identity (make, model) and usage (mileage, age) "
+            "As we can observe Vehicle identity (make, model) and usage (mileage, age) "
             "are the strongest price predictors. For EVs, electric range becomes a "
             "top-5 feature. Country fixed effects capture geographic market differences."
         )
