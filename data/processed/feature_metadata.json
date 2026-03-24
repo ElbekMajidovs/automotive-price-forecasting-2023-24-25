@@ -1,0 +1,109 @@
+{
+  "ml_features": [
+    "log_mileage",
+    "vehicle_age",
+    "power_hp",
+    "data_year",
+    "mileage_per_year",
+    "power_per_age",
+    "make_encoded",
+    "model_encoded",
+    "body_encoded",
+    "transmission_encoded",
+    "drive_encoded",
+    "electrification_score",
+    "condition_encoded",
+    "is_ev",
+    "is_phev",
+    "is_ice",
+    "is_neutral_color",
+    "country_fe",
+    "doors",
+    "electric_range_km",
+    "has_electric_range",
+    "battery_cost_index",
+    "eq_bool_total"
+  ],
+  "hedonic_features": [
+    "log_mileage",
+    "vehicle_age",
+    "power_hp",
+    "data_year",
+    "mileage_per_year",
+    "power_per_age",
+    "make_encoded",
+    "model_encoded",
+    "body_encoded",
+    "transmission_encoded",
+    "drive_encoded",
+    "electrification_score",
+    "condition_encoded",
+    "is_ev",
+    "is_phev",
+    "is_ice",
+    "is_neutral_color",
+    "country_fe",
+    "doors",
+    "electric_range_km",
+    "has_electric_range",
+    "battery_cost_index",
+    "eq_bool_total",
+    "age_x_mileage",
+    "age_squared",
+    "mileage_squared",
+    "ev_x_year",
+    "power_x_trans",
+    "make_x_age"
+  ],
+  "hedonic_interactions": [
+    "age_x_mileage",
+    "age_squared",
+    "mileage_squared",
+    "ev_x_year",
+    "power_x_trans",
+    "make_x_age"
+  ],
+  "n_ml_features": 23,
+  "n_hedonic_features": 29,
+  "target": "log_price",
+  "split_ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "split_sizes": {
+    "train": 160209,
+    "val": 34330,
+    "test": 34331
+  },
+  "stratify_cols": [
+    "country_code",
+    "make_grouped",
+    "data_year"
+  ],
+  "random_state": 42,
+  "best_rf": {
+    "n_estimators": 700,
+    "min_samples_leaf": 2,
+    "max_features": 0.7,
+    "max_depth": 20
+  },
+  "best_lgb": {
+    "subsample": 0.8,
+    "num_leaves": 127,
+    "n_estimators": 1000,
+    "min_child_samples": 10,
+    "max_depth": -1,
+    "learning_rate": 0.05,
+    "colsample_bytree": 0.7
+  },
+  "best_xgb": {
+    "subsample": 0.7,
+    "n_estimators": 300,
+    "min_child_weight": 10,
+    "max_depth": 12,
+    "learning_rate": 0.03,
+    "gamma": 0.1,
+    "colsample_bytree": 0.7
+  }
+}

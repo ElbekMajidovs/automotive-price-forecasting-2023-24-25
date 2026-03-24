@@ -1,0 +1,86 @@
+{
+  "ev_count": 12066,
+  "phev_count": 24732,
+  "ice_count": 190270,
+  "ev_market_share_pct": 5.3,
+  "phev_market_share_pct": 10.8,
+  "ev_premium_pct": 78.8,
+  "ev_premium_abs_eur": 25120,
+  "cohens_d": 0.324,
+  "mann_whitney_u": 1489754604.0,
+  "mann_whitney_p": 0.0,
+  "bci_ev_spearman_r": 0.5,
+  "bci_ev_spearman_p": 0.667,
+  "range_price_spearman_r": 0.441,
+  "range_price_spearman_p": 4.097301296048241e-221,
+  "n_ev_with_range": 4652,
+  "year_premiums": [
+    {
+      "Year": "2023",
+      "Premium_%": 67.9943956791445,
+      "Abs_EUR": 25090.0,
+      "N_ev": 2372,
+      "Cohens_d": 0.31154423967972195
+    },
+    {
+      "Year": "2024",
+      "Premium_%": 41.63770405476567,
+      "Abs_EUR": 7907.0,
+      "N_ev": 2954,
+      "Cohens_d": -0.11538864145306875
+    },
+    {
+      "Year": "2025",
+      "Premium_%": 100.54441260744986,
+      "Abs_EUR": 35090.0,
+      "N_ev": 6740,
+      "Cohens_d": 0.5824031730602013
+    }
+  ],
+  "material_correlations": [
+    {
+      "Material": "Lithium",
+      "r_sync": -0.5,
+      "p_sync": 0.667,
+      "r_lag1": NaN,
+      "p_lag1": NaN
+    },
+    {
+      "Material": "Cobalt",
+      "r_sync": 0.5,
+      "p_sync": 0.667,
+      "r_lag1": NaN,
+      "p_lag1": NaN
+    },
+    {
+      "Material": "Nickel",
+      "r_sync": 1.0,
+      "p_sync": 0.0,
+      "r_lag1": NaN,
+      "p_lag1": NaN
+    },
+    {
+      "Material": "Graphite",
+      "r_sync": 0.5,
+      "p_sync": 0.667,
+      "r_lag1": NaN,
+      "p_lag1": NaN
+    },
+    {
+      "Material": "Neodymium (Nd)",
+      "r_sync": 1.0,
+      "p_sync": 0.0,
+      "r_lag1": NaN,
+      "p_lag1": NaN
+    },
+    {
+      "Material": "Dysprosium (Dy)",
+      "r_sync": 0.5,
+      "p_sync": 0.667,
+      "r_lag1": NaN,
+      "p_lag1": NaN
+    }
+  ],
+  "ev_only_model_rmse": 0.3829,
+  "ev_only_model_r2": 0.7432
+}

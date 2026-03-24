@@ -1,0 +1,19 @@
+Model,Category,Split,RMSE_log,MAE_log,MAPE_%,R²,MAE_EUR,evaluation
+Global Mean,Baseline,Val,1.1002,0.8864,9.04,-0.0001,31695,val
+Global Mean,Baseline,Test,1.1014,0.887,9.07,-0.0,31416,test
+Country Mean,Baseline,Val,1.0735,0.8752,8.89,0.0478,31288,val
+Country Mean,Baseline,Test,1.0735,0.8756,8.91,0.05,31015,test
+OLS (Hedonic),Hedonic,Val,0.7068,0.5354,5.44,0.5873,19757,val
+OLS (Hedonic),Hedonic,Test,0.7093,0.5376,5.47,0.5852,19657,test
+Ridge,Hedonic,Val,0.7068,0.5354,5.44,0.5873,19757,val
+Ridge,Hedonic,Test,0.7093,0.5376,5.47,0.5852,19657,test
+Lasso,Hedonic,Val,0.7067,0.5354,5.44,0.5873,19748,val
+Lasso,Hedonic,Test,0.7094,0.5376,5.47,0.5852,19652,test
+ElasticNet,Hedonic,Val,0.7067,0.5354,5.44,0.5873,19749,val
+ElasticNet,Hedonic,Test,0.7094,0.5377,5.47,0.5852,19653,test
+Random Forest,ML,Val,0.5323,0.3016,3.09,0.7659,10016,val
+Random Forest,ML,Test,0.53,0.3015,3.09,0.7685,9959,test
+LightGBM,ML,Val,0.5277,0.3013,3.08,0.7699,10314,val
+LightGBM,ML,Test,0.5246,0.3009,3.08,0.7731,10158,test
+XGBoost,ML,Val,0.5269,0.2989,3.06,0.7706,10155,val
+XGBoost,ML,Test,0.5245,0.2985,3.05,0.7732,10048,test

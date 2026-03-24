@@ -1,0 +1,7 @@
+data/raw/*.csv
+data/processed/*.parquet
+data/splits/*.parquet
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+models/*.pkl

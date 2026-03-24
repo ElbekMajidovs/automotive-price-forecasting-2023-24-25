@@ -1,0 +1,62 @@
+{
+  "jarque_bera": {
+    "statistic": 569.0902126437875,
+    "p_value": 2.652347798245613e-124,
+    "interpretation": "reject_normality"
+  },
+  "kruskal_wallis_powertrain": {
+    "statistic": 6484.517847184691,
+    "p_value": 0.0,
+    "groups": [
+      "EV",
+      "ICE",
+      "PHEV"
+    ]
+  },
+  "mann_whitney_ev_ice": {
+    "statistic": 1489754604.0,
+    "p_value": 0.0
+  },
+  "kruskal_wallis_country": {
+    "statistic": 7820.882053453092,
+    "p_value": 0.0,
+    "countries": [
+      "DE",
+      "IT",
+      "NL",
+      "BE",
+      "FR"
+    ]
+  },
+  "dataset_summary": {
+    "n_rows": 228870,
+    "n_cols": 53,
+    "years": [
+      2023,
+      2024,
+      2025
+    ],
+    "n_countries": 8,
+    "n_makes": 67,
+    "price_median": 34490.0,
+    "price_mean": 46887.471104994096,
+    "ev_share_pct": 5.271988465067506,
+    "phev_share_pct": 10.806134486826583
+  },
+  "pearson_with_log_price": {
+    "mileage_km": -0.6017254389091228,
+    "vehicle_age": -0.42612709220279404,
+    "power_hp": 0.7276377565324792,
+    "engine_cc": 0.5392823830569994,
+    "doors": -0.23948976865217828,
+    "data_year": 0.2881331822585406
+  },
+  "spearman_with_log_price": {
+    "mileage_km": -0.5831412549542219,
+    "vehicle_age": -0.48222831223275636,
+    "power_hp": 0.7675269611836858,
+    "engine_cc": 0.5702787575126592,
+    "doors": -0.19624998635441246,
+    "data_year": 0.3161704539641139
+  }
+}
